@@ -19,7 +19,7 @@ mongoose.connection.once('open', () => {
 })
 
 const User = require('./Routes/User')
-const company = require('./Routes/company')
+const company = require('./Routes/Company')
 app.use('/user', User)
 app.use('/company', company)
 
