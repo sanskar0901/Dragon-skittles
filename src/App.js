@@ -1,6 +1,6 @@
 import "./App.css";
-import Login from "./Components/Login";
-import ResumeUpload from "./Components/ResumeUpload";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -8,8 +8,8 @@ function App() {
     //   <h1 className="text-red-500">Hello World</h1>
     // </div>
     <>
-      {/* <ResumeUpload /> */}
-      <Login />
+      {/* <Login /> */}
+      <Signup />
     </>
   );
 }
