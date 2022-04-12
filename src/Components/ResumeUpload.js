@@ -1,13 +1,18 @@
 import React from "react";
+import jobSearch from "../Assets/Images/hiringdashboard.gif";
 
 const ResumeUpload = () => {
   return (
     <>
-      <div className="flex flex-col w-full h-screen items-center justify-center bg-grey-lighter gap-10">
+      <div className="flex flex-col w-full h-screen items-center justify-center bg-grey-lighter gap-8 bg-cyan-100 font-poppins">
         <div>
-          <p>Let's find some jobs for you</p>
+          <p className="text-black font-bold text-4xl">
+            Let's find some jobs for you!
+          </p>
         </div>
-        <div></div>
+        <div className="w-[25vw] flex justify-center ">
+          <img src={jobSearch} alt="jobSearch" className="rounded-full" />
+        </div>
         <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-cyan-500 rounded-lg shadow-lg tracking-wide uppercase border border-cyan-700 cursor-pointer hover:bg-cyan-500 hover:text-white hover:border-0">
           <svg
             className="w-8 h-8"
