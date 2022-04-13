@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import jobSearch from "../Assets/Images/hiringdashboard.gif";
 
 const ResumeUpload = () => {
@@ -9,7 +9,11 @@ const ResumeUpload = () => {
   //   let file = fileName.current.value;
   //   innerText.current = file;
   // };
+  function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+  }
 
+  const [score, setscore] = useState("")
   return (
     <>
       <div className="flex flex-col w-full h-screen items-center justify-center bg-grey-lighter gap-8 bg-cyan-100 font-poppins">
@@ -36,10 +40,16 @@ const ResumeUpload = () => {
           <input
             type="file"
             className="absolute left-8 top-24"
-            // onChange={upload}
-            // ref="fileName"
+          // onChange={upload}
+          // ref="fileName"
           />
         </label>
+
+        <div className="w-[25vw] flex justify-center"><button className="flex justify-center " onClick={e => {
+          e.preventDefault();
+          setscore(randomNumber(50, 98))
+        }}> Check your Score:</button>{Math.round(score)}</div>
+
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 // import ChatBot from '../../lib/index';
 import React from 'react'
+import { Link } from 'react-router-dom'
 const theme = {
     background: '#D6FAE6',
     fontFamily: 'Helvetica Neue',
@@ -65,7 +66,7 @@ const steps = [
     {
         id: '10',
         component: (
-            <div> Resume Upload</div>
+            <Link to="/resumeupload"> Resume Upload</Link>
         ),
         end: true,
     },
