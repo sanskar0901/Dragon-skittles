@@ -18,7 +18,7 @@
   </p>
   
   <h3>Links to test our product</h3>
-  <p>Website Link- </p>
+  <p>Website Link- https://0jobbuddy0.netlify.app/ </p>
   <p>GitHub Link-https://github.com/sanskar0901/Dragon-skittles </p>
   
   <h3>ScreenShots of our Product</h3>
@@ -40,8 +40,8 @@
             
    <h3>Contributors</h3>
    <h6>Sanaskar Gupta - ChatBot developer- Banckend</h6>
-   <h6>SAbhishek Dubey - FrontEnd and Backend</h6>
-   <h6>Utkarsh Upendra- ML Model, ReadMe./h6>
+   <h6>Abhishek Dubey - FrontEnd and Backend</h6>
+   <h6>Utkarsh Upendra- ML Model, ReadMe.</h6>
    <h6>Manas Sharma - PPT and Conent</h6>
    
   
