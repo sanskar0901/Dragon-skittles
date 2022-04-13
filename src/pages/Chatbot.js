@@ -1,18 +1,18 @@
-import ChatBot from 'react-simple-chatbot';
-import { ThemeProvider } from 'styled-components';
+import ChatBot from "react-simple-chatbot";
+import { ThemeProvider } from "styled-components";
 // import ChatBot from '../../lib/index';
 import React from 'react'
 import { Link } from 'react-router-dom'
 const theme = {
-    background: '#D6FAE6',
-    fontFamily: 'Helvetica Neue',
-    headerBgColor: '#F97316',
-    headerFontColor: '#000',
-    headerFontSize: '30px',
-    botBubbleColor: 'cyan',
-    botFontColor: '#000',
-    userBubbleColor: '#DCFCE7',
-    userFontColor: '#4a4a4a',
+    background: "#D6FAE6",
+    fontFamily: "Helvetica Neue",
+    headerBgColor: "#F97316",
+    headerFontColor: "#000",
+    headerFontSize: "30px",
+    botBubbleColor: "cyan",
+    botFontColor: "#000",
+    userBubbleColor: "#DCFCE7",
+    userFontColor: "#4a4a4a",
 };
 const steps = [
     {
@@ -72,13 +72,25 @@ const steps = [
     },
 ];
 
-
 function Chatbot() {
     return (
-        <ThemeProvider theme={theme}>
-            <ChatBot steps={steps} />;
-        </ThemeProvider>
-    )
+        <div className="flex flex-col gap-10 justify-center items-center my-16">
+            <div>
+                <p className="text-4xl text-cyan-500 font-poppins text-center font-bold">
+                    Welcome to Job Buddy!
+                </p>
+                <p className="text-lg text-black font-poppins mt-2 text-center">
+                    Our bot Jobby is at your service.
+                </p>
+            </div>
+
+            <div>
+                <ThemeProvider theme={theme}>
+                    <ChatBot steps={steps} />
+                </ThemeProvider>
+            </div>
+        </div>
+    );
 }
 
-export default Chatbot
+export default Chatbot;
