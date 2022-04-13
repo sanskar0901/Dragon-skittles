@@ -1,22 +1,31 @@
 import React, { useState } from "react";
 import jobSearch from "../Assets/Images/hiringdashboard.gif";
-
+import axios from 'axios';
 const ResumeUpload = () => {
-  // const fileName = useRef(null);
-  // const innerText = useRef(null);
 
-  // let upload = () => {
-  //   let file = fileName.current.value;
-  //   innerText.current = file;
-  // };
-  function randomNumber(min, max) {
-    return Math.random() * (max - min) + min;
+  const randomNumber = async (min, max) => {
+    setscore(Math.round(Math.random() * (max - min) + min));
+
+    console.log(Math.round(score))
+    const s = {
+      "score": Math.round(score)
+    }
+
+    await axios.get('https://fierce-temple-12053.herokuapp.com/company/', s)
+      .then(res => {
+        // console.log(s)
+        // console.log(res.data)
+        setcompany(res.data)
+      });
+    console.log(company)
   }
 
-  const [score, setscore] = useState("")
+  const [score, setscore] = useState(0)
+  const [company, setcompany] = useState([])
+
   return (
     <>
-      <div className="flex flex-col w-full h-screen items-center justify-center bg-grey-lighter gap-8 bg-cyan-100 font-poppins">
+      <div className="flex flex-col w-full  items-center justify-center bg-grey-lighter gap-8 bg-cyan-100 font-poppins">
         <div>
           <p className="text-black font-bold text-4xl">
             Let's find some jobs for you!
@@ -47,8 +56,21 @@ const ResumeUpload = () => {
 
         <div className="w-[25vw] flex justify-center"><button className="flex justify-center " onClick={e => {
           e.preventDefault();
-          setscore(randomNumber(50, 98))
-        }}> Check your Score:</button>{Math.round(score)}</div>
+          randomNumber(50, 98)
+        }}> Check your Score:</button><b>{Math.round(score)}</b></div>
+        <p className="w-[25vw] flex justify-center">Companies You are eligible for:</p>
+        <div>{company.map(c => {
+          return (
+            <div>
+              <p className="text-black font-bold text-4xl text-center">
+                {c.name}
+              </p>
+
+            </div>
+          )
+        })
+        }</div>
+        {/* <button className="flex justify-center" onClick={Submit}> Suggested Companies</button> */}
 
       </div>
     </>
