@@ -1,6 +1,7 @@
 import "./App.css";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import ResumeUpload from "./pages/ResumeUpload";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
     // </div>
     <>
       {/* <Login /> */}
-      <Signup />
+      {/* <Signup /> */}
+      <ResumeUpload />
     </>
   );
 }
