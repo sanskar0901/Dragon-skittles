@@ -28,7 +28,7 @@ router.route('/add').post(async (req, res) => {
     }
 })
 
-router.route('/score').get(async (req, res) => {
+router.route('/score').post(async (req, res) => {
     const { score } = req.body;
     Company.find({ score: { $lt: score } })
         .then(company => res.json(company))

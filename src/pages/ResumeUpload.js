@@ -11,15 +11,15 @@ const ResumeUpload = () => {
       "score": Math.round(score)
     }
 
-    await axios.get('https://fierce-temple-12053.herokuapp.com/company/', s)
+    await axios.post('https://fierce-temple-12053.herokuapp.com/company/score', s)
       .then(res => {
         // console.log(s)
         // console.log(res.data)
-        setcompany(res.data)
+        setcompany(res.data.map(company => company.name))
       });
     console.log(company)
   }
-
+  const [file, setfile] = useState(null)
   const [score, setscore] = useState(0)
   const [company, setcompany] = useState([])
 
@@ -48,27 +48,33 @@ const ResumeUpload = () => {
           </span>
           <input
             type="file"
+            accept="application/pdf"
             className="absolute left-8 top-24"
+            onChange={(e) => {
+              setfile(e.target.files[0])
+            }}
           // onChange={upload}
           // ref="fileName"
           />
         </label>
 
-        <div className="w-[25vw] flex justify-center"><button className="flex justify-center " onClick={e => {
+        <div className="w-[25vw] flex justify-center"><button className="flex justify-center " disabled={!file} onClick={e => {
           e.preventDefault();
           randomNumber(50, 98)
+          console.log(file)
         }}> Check your Score:</button><b>{Math.round(score)}</b></div>
         <p className="w-[25vw] flex justify-center">Companies You are eligible for:</p>
-        <div>{company.map(c => {
-          return (
-            <div>
-              <p className="text-black font-bold text-4xl text-center">
-                {c.name}
-              </p>
+        <div>{
+          company.map(c => {
+            return (
+              <div>
+                <p className="text-black font-bold text-4xl text-center">
+                  {c}
+                </p>
 
-            </div>
-          )
-        })
+              </div>
+            )
+          })
         }</div>
         {/* <button className="flex justify-center" onClick={Submit}> Suggested Companies</button> */}
 
