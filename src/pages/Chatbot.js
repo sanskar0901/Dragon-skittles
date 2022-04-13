@@ -1,9 +1,22 @@
 import ChatBot from 'react-simple-chatbot';
+import { ThemeProvider } from 'styled-components';
+// import ChatBot from '../../lib/index';
 import React from 'react'
+const theme = {
+    background: '#D6FAE6',
+    fontFamily: 'Helvetica Neue',
+    headerBgColor: '#F97316',
+    headerFontColor: '#000',
+    headerFontSize: '30px',
+    botBubbleColor: 'cyan',
+    botFontColor: '#000',
+    userBubbleColor: '#DCFCE7',
+    userFontColor: '#4a4a4a',
+};
 const steps = [
     {
         id: '1',
-        message: 'What is your name?',
+        message: `Hello I'm jobby, how may I help you`,
         trigger: '2',
     },
     {
@@ -13,7 +26,47 @@ const steps = [
     },
     {
         id: '3',
-        message: 'Hi {previousValue}, nice to meet you!',
+        message: `okay what's your name`,
+        trigger: '4',
+    },
+    {
+        id: '4',
+        user: true,
+        trigger: '5',
+    },
+    {
+        id: '5',
+        message: `ok {previousValue}, please mention your experience`,
+        trigger: '6',
+    },
+    {
+        id: '6',
+        user: true,
+        trigger: '7',
+    },
+    {
+        id: '7',
+        message: `please select your profession`,
+        trigger: '8',
+    },
+    {
+        id: '8',
+        options: [
+            { value: 1, label: 'Engeniring', trigger: '9' },
+            { value: 2, label: 'Medical', trigger: '9' },
+            // { value: 3, label: 'Number 3', trigger: '8' },
+        ],
+    },
+    {
+        id: '9',
+        message: `ok can you please upload your resume`,
+        trigger: '10',
+    },
+    {
+        id: '10',
+        component: (
+            <div> Resume Upload</div>
+        ),
         end: true,
     },
 ];
@@ -21,9 +74,9 @@ const steps = [
 
 function Chatbot() {
     return (
-        <div>
-            <ChatBot steps={steps} />
-        </div>
+        <ThemeProvider theme={theme}>
+            <ChatBot steps={steps} />;
+        </ThemeProvider>
     )
 }
 

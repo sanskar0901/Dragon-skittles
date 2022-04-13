@@ -11,8 +11,9 @@ function App() {
     // </div>
     <>
       {/* <Login /> */}
+      <ResumeUpload />
       {/* <Signup /> */}
-      <Chatbot />
+      {/* <Chatbot /> */}
     </>
   );
 }
