@@ -83,7 +83,7 @@ function Chatbot() {
 
       <div>
         <ThemeProvider theme={theme}>
-          <ChatBot steps={steps} />;
+          <ChatBot steps={steps} />
         </ThemeProvider>
       </div>
     </div>

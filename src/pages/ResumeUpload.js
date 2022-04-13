@@ -35,7 +35,7 @@ const ResumeUpload = () => {
           </span>
           <input
             type="file"
-            className="absolute left-8 top-24"
+            className="absolute left-10 top-24"
             // onChange={upload}
             // ref="fileName"
           />
